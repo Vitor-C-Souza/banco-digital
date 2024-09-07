@@ -34,7 +34,6 @@ public class UserServiceImpl implements UserService {
         return convert.toDto(userOptional.get());
     }
 
-    @Transactional
     @Override
     public User create(UserDtoRequest dto) {
         if (repository.existsByAccountNumber(dto.account().getNumber())) {
